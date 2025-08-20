@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+   <h2> Q1 3rd Graded Exercise submitted by Maxine Repedro of 9-Mg</h2>
+
+   <p>Guess the number: ****</p>
+   <p>This number is from 1-100
+   <p>Enter your guess:
+   <input type="number" id="guess"></p>
+   <button onclick="checkIt()">Check It</button>
+   <p>Result: <span id="result"></span></p>
+    
+    <script>
+       var dNumber = Math.floor(Math.random() * 100) + 1; 
+
+       function checkIt() {
+       
+          var userGuess = document.getElementById("guess").value;
+          userGuess = parseInt(userGuess);
+
+          var message = "";
+
+          if (isNaN(userGuess)) {
+             message = "Please enter a valid number.";
+          } else if (userGuess < dNumber) {
+             message = "Higher";
+          } else if (userGuess > dNumber) {
+             message = "Lower";
+          } else {
+             message = "You are correct!";
+          }
+
+          document.getElementById("result").textContent = message;
+          
+       }
+    </script>
+  <body style="background-image: url('https://i.pinimg.com/originals/94/15/1e/94151e30305ab125d1fcf23cbf4db62b.gif'); background-size: cover; background-repeat: no-repeat;"></body>
+
+</body>
+</html>
